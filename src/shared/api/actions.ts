@@ -1,4 +1,4 @@
-import { TGetIdsPayload } from "./types";
+import { TFilterPayload, TGetIdsPayload } from "./types";
 
 const get_ids = (params: TGetIdsPayload) => ({
   action: "get_ids",
@@ -10,4 +10,9 @@ const get_items = (ids: string[]) => ({
   params: { ids },
 });
 
-export const actions = { get_ids, get_items };
+const filter_products = (payload: TFilterPayload) => ({
+  action: "filter",
+  params: { ...payload },
+});
+
+export const actions = { get_ids, get_items, filter_products };

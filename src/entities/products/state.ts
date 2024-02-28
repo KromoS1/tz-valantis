@@ -5,8 +5,8 @@ import { createSelectors } from "@/shared";
 const useProductsBase = create<StateType & ActionsType>(set => ({
   state: [],
   setProducts: products =>
-    set(store => ({
-      state: [...products, ...store.state],
+    set(() => ({
+      state: [...products],
     })),
 }));
 
